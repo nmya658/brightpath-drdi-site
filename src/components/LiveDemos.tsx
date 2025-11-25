@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { Smartphone, Eye, Code, X } from 'lucide-react';
-import appVideo from './conferencephotos/app.mp4';
-import workflowVideo from './conferencephotos/workflow.mp4';
 
 type DemoItem = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
   color: string;
-  video?: string;
-  link?: string;
+  video?: string; // YouTube embed URL
+  link?: string;  // External URL
 };
 
 const demos: DemoItem[] = [
@@ -17,7 +15,8 @@ const demos: DemoItem[] = [
     icon: Smartphone,
     title: 'Mobile App',
     description: 'Watch the mobile prediction app in action',
-    video: appVideo,
+    // YouTube embed URL for: https://youtu.be/_rhBR-PbcjI
+    video: 'https://www.youtube.com/embed/_rhBR-PbcjI',
     color: 'from-blue-600 to-blue-700',
   },
   {
@@ -31,9 +30,10 @@ const demos: DemoItem[] = [
     icon: Code,
     title: 'Agentic AI Workflow',
     description: 'Watch workflow automation in action',
-    video: workflowVideo,
+    // YouTube embed URL for: https://youtu.be/1JMnLtFhwKI
+    video: 'https://www.youtube.com/embed/1JMnLtFhwKI',
     color: 'from-blue-700 to-blue-800',
-  }
+  },
 ];
 
 export default function LiveDemos() {
@@ -118,12 +118,15 @@ export default function LiveDemos() {
                 <X className="w-6 h-6" />
               </button>
 
-              <video
-                src={selectedVideo}
-                controls
-                autoPlay
-                className="w-full rounded-lg max-h-[70vh]"
-              />
+              <div className="w-full rounded-lg overflow-hidden aspect-video">
+                <iframe
+                  src={selectedVideo}
+                  title="Demo video"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         )}
