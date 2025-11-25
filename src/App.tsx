@@ -44,8 +44,7 @@ function Navigation() {
               { name: "Achievements", path: "/achievements" },
               { name: "Timeline", path: "/timeline" },
               { name: "Live Demos", path: "/demos" },
-              { name: "Downloads", path: "/downloads" },
-              { name: "Contact", path: "/contact" },
+              { name: "Project Team", path: "/team" },
             ].map((item) => (
               <Link
                 key={item.path}
@@ -102,7 +101,15 @@ function App() {
         <Navigation />
 
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route
+              path="/"
+              element={
+                <PageWrapper>
+                  <Hero />
+                </PageWrapper>
+              }
+            />
+
 
           <Route
             path="/achievements"
@@ -141,7 +148,7 @@ function App() {
           />
 
           <Route
-            path="/contact"
+            path="/team"
             element={
               <PageWrapper>
                 <Contact />

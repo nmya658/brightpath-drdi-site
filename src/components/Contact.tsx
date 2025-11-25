@@ -1,96 +1,111 @@
-import { useState } from 'react';
-import { Mail, Send } from 'lucide-react';
-
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+import { Users } from 'lucide-react';
+import Abigail from './conferencephotos/Abigail-Photo (1).png';
+import nejad from './conferencephotos/nejad (1).jpg';
+import ammar from './conferencephotos/amaar (1).jpeg';
+import chris from './conferencephotos/chris (1).png';
+import amin from './conferencephotos/amin.jpeg';
+import Wathiq from './conferencephotos/Wathiq-Mansoor (1).jpg';
+import aya from './conferencephotos/aya (1).jpg';
+import valsa from './conferencephotos/valsa.jpg';
+import yassine from './conferencephotos/Yassine.jpg';
+export default function Team() {
+  const teamMembers = [
+    {
+      name: 'Dr. Abigail Copiaco',
+      role: 'Principal Investigator',
+      affiliation: 'University of Dubai',
+      photo: Abigail,
+    },
+    {
+      name: 'Dr. Yassine Himeur',
+      role: 'Co-Principal Investigator',
+      affiliation: 'University of Dubai',
+      photo: yassine,
+    },
+    {
+      name: 'Prof. Wathiq Mansoor',
+      role: 'Co-Principal Investigator',
+      affiliation: 'University of Dubai',
+      photo: Wathiq,
+    },
+    {
+      name: 'Dr. Ammar Albanna',
+      role: 'Co-Principal Investigator',
+      affiliation: 'Al Amal Psychiatric Hospital',
+      photo: ammar,
+    },
+    {
+      name: 'Nejad Alagha',
+      role: 'Research Assistant',
+      affiliation: 'University of Dubai',
+      photo: nejad,
+    },
+    {
+      name: 'Aya Elkhodiry',
+      role: 'Research Assistant',
+      affiliation: 'University of Dubai',
+      photo: aya,
+    },
+    {
+      name: 'Prof. Valsamma Eapen',
+      role: 'External Advisor',
+      affiliation: 'University of New South Wales',
+      photo: valsa,
+    },
+    {
+      name: 'Prof. Christian Ritz',
+      role: 'External Advisor',
+      affiliation: 'University of Wollongong',
+      photo: chris,
+    },
+    {
+      name: 'Prof. Amin Beheshti',
+      role: 'External Advisor',
+      affiliation: 'Macquarie University',
+      photo:amin,
+    },
+  ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Mail className="w-8 h-8 text-blue-600" />
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-            <p className="text-gray-600">
-              Have questions about BrightPath? We'd love to hear from you.
-            </p>
+        <div className="text-center mb-16">
+          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Users className="w-8 h-8 text-blue-600" />
           </div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Meet the talented individuals behind BrightPath, working together to create innovative solutions.
+          </p>
+        </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 resize-none"
-                placeholder="Tell us about your inquiry..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-lg flex items-center justify-center gap-2"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {teamMembers.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 group"
             >
-              Send Message
-              <Send className="w-5 h-5" />
-            </button>
-          </form>
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-6">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-40 h-40 rounded-full object-cover border-4 border-blue-100 group-hover:border-blue-300 transition-all duration-300"
+                  />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-blue-600 font-semibold mb-3 text-lg">
+                  {member.role}
+                </p>
+                <p className="text-gray-600">
+                  {member.affiliation}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

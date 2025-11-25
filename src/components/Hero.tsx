@@ -2,6 +2,10 @@ import { Eye, Brain } from 'lucide-react';
 import udLogo from './logo.png';
 import drdiLogo from './DRDI.webp';
 import ehsLogo from './EHS.png';
+// International Collaborators - replace with actual logo files later
+import uowLogo from './conferencephotos/uow-logo.png'; // University of Wollongong
+import unswLogo from './conferencephotos/unsw-logo.png'; // University of New South Wales
+import mqLogo from './conferencephotos/mq-logo.png'; // Macquarie University
 
 export default function Hero() {
   return (
@@ -75,6 +79,48 @@ export default function Hero() {
               </span>
             </div>
 
+          </div>
+        </div>
+
+        {/* International Collaborators Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-blue-50">
+            International Collaborators
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* University of Wollongong */}
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <div className="px-6 py-5 bg-white rounded-xl shadow-xl flex items-center justify-center h-24">
+                <img 
+                  src={uowLogo} 
+                  alt="University of Wollongong" 
+                  className="max-h-14 w-auto object-contain"
+                />
+              </div>
+            </div>
+
+            {/* University of New South Wales */}
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <div className="px-6 py-5 bg-white rounded-xl shadow-xl flex items-center justify-center h-24">
+                <img 
+                  src={unswLogo} 
+                  alt="University of New South Wales" 
+                  className="max-h-14 w-auto object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Macquarie University */}
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <div className="px-6 py-5 bg-white rounded-xl shadow-xl flex items-center justify-center h-24">
+                <img 
+                  src={mqLogo} 
+                  alt="Macquarie University" 
+                  className="max-h-14 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
