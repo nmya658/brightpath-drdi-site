@@ -58,8 +58,8 @@ const milestones = [
     completed: true,
   },
   {
-    date: 'Nov 2025',
-    title: 'Ethical & Clinical Approvals (Ongoing)',
+    date: 'May - Nov 2025',
+    title: 'Ethical & Clinical Approvals',
     description:
       'Submitted ethics applications and initiated clinical approval workflows with relevant committees, aligning protocol with data privacy and pediatric safety requirements.',
     completed: true,
