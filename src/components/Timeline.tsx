@@ -95,13 +95,6 @@ const milestones = [
     completed: false,
   },
   {
-    date: 'Jul 2026',
-    title: 'Submission of Two Journal Papers',
-    description:
-      'Prepare and submit two high-impact journal manuscripts covering the agentic AI workflow and the AI-driven ASD screening framework.',
-    completed: false,
-  },
-  {
     date: 'Oct 2026',
     title: 'Development of LLM Model for Personalized Feedback',
     description:
