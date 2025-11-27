@@ -136,9 +136,9 @@ const awardsData: AwardItem[] = [
       'Recognized for an innovative, agentic AI-powered framework enabling convenient, home-based autism screening for families.',
     date: 'October 2025',
     images: [
-      conf20241,
-      conf20242,
-      conf20243,
+      conf20251,
+      conf20252,
+      conf20253,
     ],
   },
   {
@@ -148,9 +148,9 @@ const awardsData: AwardItem[] = [
       'Organized an interactive session on early autism screening in children, demonstrating home-based eye-tracking tools and educating parents and clinicians on accessible, technology-driven pathways to early diagnosis.',
     date: 'October 2024',
     images: [
-      conf20251,
-      conf20252,
-      conf20253,
+      conf20241,
+      conf20242,
+      conf20243,
     ],
   },
 ];
